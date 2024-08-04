@@ -1,0 +1,14 @@
+docker run -itd \
+    --env "DISPLAY=$DISPLAY" \
+    --env "QT_X11_NO_MITSHM=1" \
+    --volume="$HOME/.Xauthority:/root/.Xauthority:rw" \
+    --volume="/tmp/.X11-unix :/tmp/.X11-unix:rw" \
+    -v /dsi/gannot-lab2:/workspace/gannot-lab2 \
+    -v ~/:/home/workspace/yoavellinson \
+    -v /dsi:/dsi \
+    --gpus all \
+    --net host \
+    --name yoavellinson_opencv project_403
+
+
+docker run -itd   --env "DISPLAY" 
